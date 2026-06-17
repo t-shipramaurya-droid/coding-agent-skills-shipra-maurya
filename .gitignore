@@ -27,3 +27,6 @@
 
 # Lock files optional — keep package-lock if you add it later
 # **/package-lock.json
+
+# Local push notes (not for GitHub)
+GITHUB-SUBMISSION.md
