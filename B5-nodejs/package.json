@@ -1,0 +1,13 @@
+{
+  "name": "b5-transaction-service",
+  "version": "1.0.0",
+  "description": "Node.js transaction service — B5 assignment exercise",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "test": "node --test tests/transactions.test.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

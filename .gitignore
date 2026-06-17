@@ -1,0 +1,29 @@
+# .venv / virtualenv
+**/.venv/
+**/__pycache__/
+**/*.pyc
+**/.pytest_cache/
+
+# Rust build output
+**/target/
+
+# Node
+**/node_modules/
+
+# Terraform / K8s local state
+**/.terraform/
+**/terraform.tfstate*
+**/tfplan
+**/.build/
+
+# IDE / OS
+.DS_Store
+.idea/
+*.swp
+
+# Logs / temp
+**/artifacts/*.log
+/tmp/
+
+# Lock files optional — keep package-lock if you add it later
+# **/package-lock.json

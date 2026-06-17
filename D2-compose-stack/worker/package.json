@@ -1,0 +1,11 @@
+{
+  "name": "d2-fraud-worker",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "start": "node src/run-loop.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

@@ -1,0 +1,6 @@
+INFO application started
+WARN connection slow
+ERROR payment failed
+INFO retry succeeded
+WARN cache miss
+ERROR timeout

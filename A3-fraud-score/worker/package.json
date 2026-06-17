@@ -1,0 +1,13 @@
+{
+  "name": "a3-fraud-worker",
+  "version": "1.0.0",
+  "description": "Node worker for A3 fraud-score polyglot system",
+  "type": "module",
+  "scripts": {
+    "start": "node src/run-once.js",
+    "test": "node --test tests/*.test.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

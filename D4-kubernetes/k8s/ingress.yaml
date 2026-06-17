@@ -1,0 +1,23 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: convert-service
+  namespace: convert-service
+  labels:
+    app.kubernetes.io/name: convert-service
+    app.kubernetes.io/part-of: pm4-6558-d4
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+  ingressClassName: nginx
+  rules:
+    - host: convert.local
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: convert-service
+                port:
+                  number: 80

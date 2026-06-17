@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: convert-service
+  namespace: convert-service
+  labels:
+    app.kubernetes.io/name: convert-service
+    app.kubernetes.io/part-of: pm4-6558-d4
+spec:
+  type: ClusterIP
+  selector:
+    app.kubernetes.io/name: convert-service
+  ports:
+    - name: http
+      port: 80
+      targetPort: http

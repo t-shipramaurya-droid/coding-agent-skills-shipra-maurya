@@ -1,0 +1,43 @@
+{
+  "status": "success",
+  "data": {
+    "resultType": "vector",
+    "result": [
+      {
+        "metric": {
+          "from_currency": "USD",
+          "status": "success",
+          "to_currency": "EUR"
+        },
+        "value": [
+          0,
+          "21.0"
+        ]
+      },
+      {
+        "metric": {
+          "from_currency": "USD",
+          "status": "success",
+          "to_currency": "INR"
+        },
+        "value": [
+          0,
+          "11.0"
+        ]
+      },
+      {
+        "metric": {
+          "from_currency": "EUR",
+          "status": "success",
+          "to_currency": "USD"
+        },
+        "value": [
+          0,
+          "8.0"
+        ]
+      }
+    ]
+  },
+  "query": "sum(rate(convert_requests_total[1m])) by (from_currency, to_currency, status)",
+  "note": "Instant vector from /metrics scrape (local proof without Prometheus)"
+}

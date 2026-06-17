@@ -1,0 +1,59 @@
+{
+  "annotations": {
+    "list": []
+  },
+  "editable": true,
+  "fiscalYearStartMonth": 0,
+  "graphTooltip": 0,
+  "id": null,
+  "links": [],
+  "panels": [
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "Prometheus"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "unit": "reqps"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 24,
+        "x": 0,
+        "y": 0
+      },
+      "id": 1,
+      "options": {
+        "legend": {
+          "displayMode": "list",
+          "placement": "bottom"
+        }
+      },
+      "targets": [
+        {
+          "expr": "sum(rate(convert_requests_total[1m])) by (from_currency, to_currency, status)",
+          "legendFormat": "{{from_currency}}->{{to_currency}} {{status}}",
+          "refId": "A"
+        }
+      ],
+      "title": "Convert request rate (D6 panel)",
+      "type": "timeseries"
+    }
+  ],
+  "refresh": "5s",
+  "schemaVersion": 39,
+  "tags": ["pm4-6558", "d6"],
+  "time": {
+    "from": "now-15m",
+    "to": "now"
+  },
+  "title": "I4 Convert Service",
+  "uid": "i4-convert-d6",
+  "version": 1
+}
