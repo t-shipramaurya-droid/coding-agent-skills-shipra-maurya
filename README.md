@@ -19,7 +19,48 @@ This repository is my **submission evidence** for the Paytm Money coding-agent s
 5. **Produce infra/DevOps artifacts** (Terraform, Docker Compose, CI, Kubernetes, observability)
 6. **Apply learnings on real FO work** — Testcontainers integration tests for `eq-order-hold-consumer` (PM4-6500)
 
-Every exercise has a **write-up markdown file**, **runnable code** (where applicable), and notes on **what the agent suggested vs what I verified manually**. See [`learnings.md`](learnings.md) for gaps, recommendations, and honest limitations.
+Every exercise has a **write-up markdown file**, **runnable code** (where applicable), and notes on **what the agent suggested vs what I manually verified**. See [`learnings.md`](learnings.md) for gaps, recommendations, and honest limitations.
+
+**Visual proof:** Four PNG screenshots in [`docs/screenshots/`](docs/screenshots/) document live pytest runs and D6 observability (details below).
+
+---
+
+## Verification screenshots
+
+These images are committed to the repo so HR/evaluators can see **manual verification** at a glance. Reproduce any capture using the commands in the table.
+
+| File | What it proves | How it was captured |
+|------|----------------|---------------------|
+| [`01-pytest-all-green.png`](docs/screenshots/01-pytest-all-green.png) | **I4 + D6 tests pass** — 9/9 pytest (API, converter, metrics) | `cd I4-convert-pair/service && pytest -v` |
+| [`02-d6-panel-data-json.png`](docs/screenshots/02-d6-panel-data-json.png) | **D6 panel data** — JSON with USD→EUR (21), USD→INR (11), EUR→USD (8) | `D6-observability/artifacts/panel-data.json` |
+| [`03-d6-prove-local-terminal.png`](docs/screenshots/03-d6-prove-local-terminal.png) | **D6 full pipeline** — load 40 requests, metrics snapshot, 2 pytest passed | `cd D6-observability && ./scripts/prove-local.sh` |
+| [`04-d6-metrics-grep.png`](docs/screenshots/04-d6-metrics-grep.png) | **Prometheus counters** — raw `convert_requests_total` lines (21+11+8=40) | `grep convert_requests_total D6-observability/artifacts/metrics-snapshot.txt` |
+
+### 1 — All tests green (I4 convert + D6 metrics)
+
+![9 pytest tests passed including test_metrics.py](docs/screenshots/01-pytest-all-green.png)
+
+*Covers `test_convert_api.py`, `test_converter.py`, and `test_metrics.py` — proves `/metrics` endpoint and convert logic.*
+
+### 2 — D6 dashboard panel data (JSON artifact)
+
+![panel-data.json with status success and currency pair metrics](docs/screenshots/02-d6-panel-data-json.png)
+
+*Grafana/Prometheus-style query result for `sum(rate(convert_requests_total[1m]))` — D6 requirement without Docker/Grafana.*
+
+### 3 — D6 prove-local script (end-to-end)
+
+![prove-local.sh: uvicorn, 40 convert requests, metrics written, tests passed](docs/screenshots/03-d6-prove-local-terminal.png)
+
+*Single script: start service → generate traffic → scrape `/metrics` → emit panel JSON → verify with pytest.*
+
+### 4 — Raw Prometheus metrics (grep)
+
+![grep convert_requests_total showing EUR USD INR counts](docs/screenshots/04-d6-metrics-grep.png)
+
+*Direct exposition from `/metrics` — counters match the 40-request load script.*
+
+> **Tip for evaluators:** Start with screenshots 1 and 3, then open [`D6-observability.md`](D6-observability.md) for the full write-up.
 
 ---
 
@@ -27,16 +68,18 @@ Every exercise has a **write-up markdown file**, **runnable code** (where applic
 
 | Start here | Purpose |
 |------------|---------|
-| **This README** | Overview + index |
+| **This README** | Overview + index + **screenshots** |
+| [`docs/screenshots/`](docs/screenshots/) | PNG proof: pytest green, D6 metrics (4 images) |
 | [`learnings.md`](learnings.md) | What worked, gaps, verification matrix, full checklist |
 | `B*.md` / `I*.md` / `A*.md` / `D*.md` | One doc per exercise with proof commands |
 | Runnable subfolders | `B4-fastapi/`, `I4-convert-pair/`, `A3-fraud-score/`, `D1-terraform/`, etc. |
 
 **Suggested review order (15 min skim → 45 min deep):**
 
-1. Read this README + `learnings.md`
-2. Skim exercise index table below
-3. Pick 2–3 areas to verify live (commands in each folder README)
+1. Scroll **Verification screenshots** above (4 PNGs)
+2. Read `learnings.md`
+3. Skim exercise index table below
+4. Optionally re-run one verify command
 
 ---
 
@@ -157,6 +200,12 @@ cd D6-observability && ./scripts/prove-local.sh
 PM4-6558-assignment/
 ├── README.md                 ← you are here
 ├── learnings.md              ← gaps, verification, checklist
+├── docs/
+│   └── screenshots/          ← PNG verification proof (see README § Screenshots)
+│       ├── 01-pytest-all-green.png
+│       ├── 02-d6-panel-data-json.png
+│       ├── 03-d6-prove-local-terminal.png
+│       └── 04-d6-metrics-grep.png
 ├── B1…B6, I1…I6, A1…A6, D1…D6 *.md
 ├── B4-fastapi/               ← greenfield Python
 ├── B5-nodejs/                ← greenfield Node

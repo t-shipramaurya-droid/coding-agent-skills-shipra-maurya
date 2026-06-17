@@ -97,3 +97,4 @@
 - [x] Google Doc self-eval yes/no table filled
 - [x] Jira PM4-6558 → Submit for Review
 - [ ] GitHub repo pushed for HR (see `GITHUB-SUBMISSION.md`)
+- [x] Verification screenshots in `docs/screenshots/` (4 PNGs, linked from README)
