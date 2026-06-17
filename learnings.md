@@ -3,7 +3,7 @@
 **Assignee:** Shipra Maurya  
 **Last updated:** 2026-06-17  
 **Evidence folder:** `PM4-6558-assignment/`  
-**Self-eval:** Google Doc yes/no table (OCL / PML version)
+**Self-eval:** [`00-basics-self-eval.md`](00-basics-self-eval.md) + Google Doc yes/no table (OCL / PML version)
 
 ---
 
@@ -95,6 +95,9 @@
 - [x] All exercises B1–B6, I1–I6, A1–A6, D1–D6 documented
 - [x] `learnings.md` updated
 - [x] Google Doc self-eval yes/no table filled
+- [x] Repo self-eval [`00-basics-self-eval.md`](00-basics-self-eval.md) with evidence column
+- [x] Cursor rules + “How I used Cursor” in README
+- [x] Reusable skill pack in `.cursor/skills/` (10 skills — read, I3/I6, A5)
 - [x] Jira PM4-6558 → Submit for Review
 - [ ] GitHub repo pushed for HR (see `GITHUB-SUBMISSION.md`)
 - [x] Verification screenshots in `docs/screenshots/` (4 PNGs, linked from README)

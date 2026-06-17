@@ -1,0 +1,22 @@
+---
+description: Safe-change constraints for Java/Spring Boot repos (eq-order-hold-consumer style)
+globs: **/*.{java,gradle,kts}
+alwaysApply: false
+---
+
+# Java / Spring Boot safe changes
+
+When editing unfamiliar Spring Boot services:
+
+1. **Read before write** — locate controller → service → repository → config; cite file paths in the plan.
+2. **One concern per change** — e.g. Kafka header fix (I3) separate from dependency modernization (A4).
+3. **Always run unit tests** after edits:
+   ```bash
+   make bootstrap   # if D5 Makefile present
+   # or: sdk env install && gradle test --no-daemon
+   ```
+4. **Integration tests** (`@Tag("integration")`) require Docker/Testcontainers — note if skipped locally.
+5. **Do not** pin conflicting dependency versions (e.g. Boot 2.x starter on Boot 3 app) without explicit QA plan.
+6. **Do not commit** hardcoded Maven credentials or secrets from `build.gradle`.
+
+For assignment exercises, link the branch name and risk assessment in the markdown artifact.

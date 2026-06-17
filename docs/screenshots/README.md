@@ -11,6 +11,8 @@
 
 Referenced from root [`README.md`](../../README.md) § Verification screenshots.
 
+**Agent supervision:** The **Agent suggested vs manually verified** table in [`learnings.md`](../../learnings.md) is also summarized in README — screenshot that section in GitHub preview if HR wants a PNG (`05-agent-vs-manual-learnings.png`).
+
 ---
 
 ## Optional additional screenshot

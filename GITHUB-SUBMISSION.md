@@ -39,6 +39,8 @@ git push -u origin main
 | GitHub repo URL | Main deliverable |
 | Jira ticket | https://paytmmoney.atlassian.net/browse/PM4-6558 |
 | Google Doc self-eval | Link to filled doc |
+| Repo self-eval | `00-basics-self-eval.md` (yes/no + evidence table) |
+| Optional HR add-on | README § **How I used Cursor**, `docs/cursor-rules/`, agent vs manual table |
 | Optional | Bitbucket PR #14 for PM4-6500 |
 
 **Email template:**
@@ -47,10 +49,22 @@ git push -u origin main
 > Please find my coding agent skills assignment submission:  
 > **GitHub:** https://github.com/YOUR_USERNAME/pm4-6558-coding-agent-assignment  
 > **Jira:** PM4-6558 (In Review)  
-> **Self-eval:** [Google Doc link]  
-> Start with `README.md` and `learnings.md` in the repo root.
+> **Self-eval:** [Google Doc link] + `00-basics-self-eval.md` in repo  
+> Start with `README.md` § **How to use this agent**, then `00-basics-self-eval.md` and `learnings.md`.
 
-## 5. Optional polish (not required)
+## 5. Optional stretch (HR / “how you use agents”)
+
+Already included in this repo:
+
+| Add-on | Location |
+|--------|----------|
+| Cursor rule snippets | `docs/cursor-rules/` (+ live copy in `.cursor/rules/`) |
+| Reusable skills (any service) | `.cursor/skills/` — 10 skills (read + I3/I6 + A5) |
+| How I used Cursor | README § How I used Cursor |
+| Agent vs manual supervision | README table + `learnings.md` § Agent suggested vs manually verified |
+| Basics self-eval (Garima-style) | `00-basics-self-eval.md` |
+
+## 6. Other optional polish
 
 - Add 2–3 screenshots to `docs/screenshots/` (Grafana, pytest green, Jira)
 - 5-min Loom walkthrough of README + one live demo

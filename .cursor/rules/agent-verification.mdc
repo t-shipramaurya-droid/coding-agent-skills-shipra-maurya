@@ -1,0 +1,25 @@
+---
+description: Require agent vs manual verification notes on assignment and FO change docs
+alwaysApply: true
+---
+
+# Agent output verification
+
+When completing a coding-agent assignment task or production change:
+
+1. **Run verification yourself** — do not claim tests pass without executing the command.
+2. **Document both sides** in the task markdown:
+   - What the agent suggested
+   - What you manually ran (exact command + result)
+3. **Prefer minimal diffs** — one focused change per exercise or PR slice.
+4. **Record limitations honestly** (e.g. no Docker, SSL on gradlew) in `learnings.md` or the exercise doc.
+5. **Before marking complete**, include: test command, pass/fail output or BUILD SUCCESSFUL line, and rollback notes for infra or dependency changes.
+
+Example footer for exercise docs:
+
+```markdown
+## Agent suggested vs manually verified
+| Item | Agent | Manual |
+|------|-------|--------|
+| Tests pass | pytest | ✅ 9 passed (screenshot in docs/screenshots/) |
+```
