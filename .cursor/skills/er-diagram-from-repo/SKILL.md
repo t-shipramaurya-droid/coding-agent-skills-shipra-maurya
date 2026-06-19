@@ -65,4 +65,4 @@ erDiagram
 
 ## Reference
 
-Example: `PM4-6558-assignment/I1-er-diagram.md`.
+Example: `PM4-6558-assignment/evidence/I/I1-er-diagram.md`.

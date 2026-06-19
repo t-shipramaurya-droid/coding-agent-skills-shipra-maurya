@@ -61,30 +61,30 @@
 
 | Exercise | Status | Artifact |
 |----------|--------|----------|
-| B1 Repo inventory | ✅ | `B1-repo-inventory.md` |
-| B2 API map | ✅ | `B2-api-endpoint-map.md` |
-| B3 Test discovery | ✅ | `B3-test-discovery.md` (eq-nudge-info-service) |
-| B4 FastAPI | ✅ | `B4-fastapi/` — 4/4 tests |
-| B5 Node.js | ✅ | `B5-nodejs/` — 3/3 tests |
-| B6 Rust CLI | ✅ | `B6-rust-logcounter/` — 3/3 tests |
-| I1 ER diagram | ✅ | `I1-er-diagram.md` |
-| I2 Flow trace | ✅ | `I2-end-to-end-flow.md` |
-| I3 Small safe change | ✅ | `I3-small-safe-change.md` — branch `assignment/PM4-6558-I3` |
-| I4 Polyglot pair | ✅ | `I4-convert-pair/` + `I4-polyglot-pair.md` |
-| I5 Dockerize | ✅ | `I5-dockerize.md` + Dockerfile (uvicorn proof; Docker optional) |
-| I6 Bug diagnosis | ✅ | `I6-bug-diagnosis.md` |
-| A1 Parallel plan | ✅ | `A1-parallel-plan.md` |
-| A2 Parallel worktrees | ✅ | `A2-parallel-worktrees.md` |
-| A3 Fraud-score system | ✅ | `A3-fraud-score/` — cargo 3, pytest 3, npm 2 |
-| A4 Modernization | ✅ | `A4-modernization.md` — MySQL driver P1 on `assignment/PM4-6558-A4` |
-| A5 PR review | ✅ | `A5-pr-review.md` — PM4-6500 approve |
-| A6 Performance | ✅ | `A6-performance.md` — batch subprocess ~50× faster |
-| D1 Terraform | ✅ | `D1-terraform/` — validate + mock plan |
-| D2 docker-compose | ✅ | `D2-compose-stack/` — compose + E2E scripts |
-| D3 CI pipeline | ✅ | `D3-ci/` — GitHub Actions + local CI sim |
-| D4 Kubernetes | ✅ | `D4-kubernetes/` — kubeconform 5/5 |
-| D5 Bootstrap | ✅ | `D5-reproducible-env.md` + `eq-order-hold-consumer/Makefile` |
-| D6 Observability | ✅ | `D6-observability/` — metrics + panel-data.json |
+| B1 Repo inventory | ✅ | `evidence/B/B1-repo-inventory.md` |
+| B2 API map | ✅ | `evidence/B/B2-api-endpoint-map.md` |
+| B3 Test discovery | ✅ | `evidence/B/B3-test-discovery.md` (eq-nudge-info-service) |
+| B4 FastAPI | ✅ | `artifacts/B4-fastapi/` — 4/4 tests |
+| B5 Node.js | ✅ | `artifacts/B5-nodejs/` — 3/3 tests |
+| B6 Rust CLI | ✅ | `artifacts/B6-rust-logcounter/` — 3/3 tests |
+| I1 ER diagram | ✅ | `evidence/I/I1-er-diagram.md` |
+| I2 Flow trace | ✅ | `evidence/I/I2-end-to-end-flow.md` |
+| I3 Small safe change | ✅ | `evidence/I/I3-small-safe-change.md` — branch `assignment/PM4-6558-I3` |
+| I4 Polyglot pair | ✅ | `artifacts/I4-convert-pair/` + `evidence/I/I4-polyglot-pair.md` |
+| I5 Dockerize | ✅ | `evidence/I/I5-dockerize.md` + Dockerfile (uvicorn proof; Docker optional) |
+| I6 Bug diagnosis | ✅ | `evidence/I/I6-bug-diagnosis.md` |
+| A1 Parallel plan | ✅ | `evidence/A/A1-parallel-plan.md` |
+| A2 Parallel worktrees | ✅ | `evidence/A/A2-parallel-worktrees.md` |
+| A3 Fraud-score system | ✅ | `artifacts/A3-fraud-score/` — cargo 3, pytest 3, npm 2 |
+| A4 Modernization | ✅ | `evidence/A/A4-modernization.md` — MySQL driver P1 on `assignment/PM4-6558-A4` |
+| A5 PR review | ✅ | `evidence/A/A5-pr-review.md` — PM4-6500 approve |
+| A6 Performance | ✅ | `evidence/A/A6-performance.md` — batch subprocess ~50× faster |
+| D1 Terraform | ✅ | `artifacts/D1-terraform/` — validate + mock plan |
+| D2 docker-compose | ✅ | `artifacts/D2-compose-stack/` — compose + E2E scripts |
+| D3 CI pipeline | ✅ | `artifacts/D3-ci/` — GitHub Actions + local CI sim |
+| D4 Kubernetes | ✅ | `artifacts/D4-kubernetes/` — kubeconform 5/5 |
+| D5 Bootstrap | ✅ | `evidence/D/D5-reproducible-env.md` + `eq-order-hold-consumer/Makefile` |
+| D6 Observability | ✅ | `artifacts/D6-observability/` — metrics + panel-data.json |
 | /be-plan PM4-6500 | ✅ | [Confluence plan](https://paytmmoney.atlassian.net/wiki/spaces/PM/pages/748716084) |
 | PM4-6500 implementation | ✅ | PR #14 — Testcontainers ITs + JaCoCo |
 
@@ -97,7 +97,8 @@
 - [x] Google Doc self-eval yes/no table filled
 - [x] Repo self-eval [`00-basics-self-eval.md`](00-basics-self-eval.md) with evidence column
 - [x] Cursor rules + “How I used Cursor” in README
-- [x] Reusable skill pack in `.cursor/skills/` (10 skills — read, I3/I6, A5)
+- [x] Reusable skill pack in `.cursor/skills/` (16 skills — read, I3/I6, Advanced A1–A6)
 - [x] Jira PM4-6558 → Submit for Review
-- [x] GitHub repo pushed for HR — https://github.com/t-shipramaurya-droid/coding-agent-skills-shipra-maurya
+- [x] GitHub repo pushed — https://github.com/t-shipramaurya-droid/coding-agent-skills-shipra-maurya
+- [x] Evidence reorganized: `evidence/` (write-ups) + `artifacts/` (runnable code)
 - [x] Verification screenshots in `docs/screenshots/` (4 PNGs, linked from README)

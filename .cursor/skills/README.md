@@ -1,63 +1,88 @@
-# Coding-agent skill pack (any imported service)
+# Coding-agent skill pack
 
-Reusable Cursor skills derived from **[What can you do using a coding agent?](https://docs.google.com/document/d/1Y23tu2ePPexkBhh_G0RCK1fNio_NQ3EZuTbgWa_UyPA/edit)**.
+Reusable Cursor skills from **[What can you do using a coding agent?](https://docs.google.com/document/d/1Y23tu2ePPexkBhh_G0RCK1fNio_NQ3EZuTbgWa_UyPA/edit)** — **Basics/Intermediate read**, **operate**, and **Advanced** exercises.
 
-## Install for daily use (all projects)
+## Install
 
 ```bash
 mkdir -p ~/.cursor/skills
 cp -R PM4-6558-assignment/.cursor/skills/* ~/.cursor/skills/
 ```
 
-Restart Cursor or open a new chat.
+Restart Cursor or open a new Agent chat.
+
+---
 
 ## Quick invoke
 
 | Goal | Skill |
 |------|-------|
-| Full read pack + index | `/coding-agent-full-onboard` |
-| B1–B3 only | `/coding-agent-read-any-service` |
-| One exercise | `/repo-inventory`, `/test-discovery`, etc. |
-| Small fix with ticket | `/safe-change-in-repo` |
-| Debug failing test | `/bug-diagnosis` |
-| Review a PR | `/pr-adversarial-review` |
+| Full read pack (B1–I2) | `/coding-agent-full-onboard` |
+| Quick read (B1–B3) | `/coding-agent-read-any-service` |
+| Advanced ticket (A1–A6) | `/coding-agent-advanced-pack` |
+| Parallel plan | `/parallel-worktree-plan` |
+| Run 2 worktrees | `/parallel-worktrees-execute` |
+| Build FastAPI+Node+Rust | `/polyglot-mini-system` |
+| Modernize deps (one step) | `/repo-modernization` |
+| Review PR | `/pr-adversarial-review` |
+| Fix perf bottleneck | `/performance-profile-fix` |
+| Small fix | `/safe-change-in-repo` |
+| Debug test | `/bug-diagnosis` |
 
-## Skill map (10 skills)
+---
 
-| Skill | Assignment | Works on any service? |
-|-------|------------|------------------------|
-| [`coding-agent-full-onboard`](coding-agent-full-onboard/SKILL.md) | B1–I2 orchestrator | ✅ + writes `docs/agent-read/README.md` |
-| [`coding-agent-read-any-service`](coding-agent-read-any-service/SKILL.md) | B1–B3 (+ optional I1/I2) | ✅ lighter orchestrator |
-| [`repo-inventory`](repo-inventory/SKILL.md) | B1 | ✅ |
-| [`api-endpoint-map`](api-endpoint-map/SKILL.md) | B2 | ✅ |
-| [`test-discovery`](test-discovery/SKILL.md) | B3 | ✅ |
-| [`er-diagram-from-repo`](er-diagram-from-repo/SKILL.md) | I1 | ✅ |
-| [`flow-trace`](flow-trace/SKILL.md) | I2 | ✅ |
-| [`safe-change-in-repo`](safe-change-in-repo/SKILL.md) | I3 | ✅ (needs ticket/scope) |
-| [`bug-diagnosis`](bug-diagnosis/SKILL.md) | I6 | ✅ |
-| [`pr-adversarial-review`](pr-adversarial-review/SKILL.md) | A5 | ✅ (any PR) |
+## Read & operate (10 skills)
+
+| Skill | Exercise |
+|-------|----------|
+| `coding-agent-full-onboard` | B1–I2 orchestrator |
+| `coding-agent-read-any-service` | B1–B3 (+ optional I1/I2) |
+| `repo-inventory` | B1 |
+| `api-endpoint-map` | B2 |
+| `test-discovery` | B3 |
+| `er-diagram-from-repo` | I1 |
+| `flow-trace` | I2 |
+| `safe-change-in-repo` | I3 |
+| `bug-diagnosis` | I6 |
+| `pr-adversarial-review` | A5 |
+
+---
+
+## Advanced — parallel agent operator (6 skills)
+
+| Skill | Exercise | Any repo? |
+|-------|----------|-----------|
+| [`coding-agent-advanced-pack`](coding-agent-advanced-pack/SKILL.md) | A1–A6 router | ✅ |
+| [`parallel-worktree-plan`](parallel-worktree-plan/SKILL.md) | A1 | ✅ |
+| [`parallel-worktrees-execute`](parallel-worktrees-execute/SKILL.md) | A2 | ✅ |
+| [`polyglot-mini-system`](polyglot-mini-system/SKILL.md) | A3 | ⚠️ new build |
+| [`repo-modernization`](repo-modernization/SKILL.md) | A4 | ✅ |
+| [`performance-profile-fix`](performance-profile-fix/SKILL.md) | A6 | ✅ |
+
+A5 = `pr-adversarial-review` (listed above).
+
+**Suggested FO flow:** `coding-agent-full-onboard` → A1 → A2 → work → A5 before merge.
+
+---
 
 ## Not skill-packaged
 
 | Exercises | Reason |
 |-----------|--------|
-| B4–B6 | Greenfield new apps |
-| I4, A3 | Multi-component builds |
-| A1–A2, A4, A6 | Parallel work, modernization, perf — org `be-*` skills |
-| D1–D6 | Infra/DevOps artifacts |
+| B4–B6 | Single-language greenfield templates |
+| I4 | Two-component pair (similar to A3 lite) |
+| D1–D6 | Terraform, compose, CI, K8s, observability |
 
-## Rules (constrain agent behavior)
+---
 
-Copy from [`docs/cursor-rules/`](../docs/cursor-rules/) or use [`.cursor/rules/`](../rules/):
+## Rules
 
-- `agent-verification.mdc` — require manual test proof
-- `java-spring-safe-change.mdc` — safe edits on Spring FO repos
+- [`docs/cursor-rules/`](../docs/cursor-rules/) — `agent-verification`, `java-spring-safe-change`
 
-## Evidence from PM4-6558
+## Evidence (PM4-6558)
 
-| Exercise | Example artifact |
-|----------|------------------|
-| B1–I2 | `B1-repo-inventory.md` … `I2-end-to-end-flow.md` |
-| I3 | `I3-small-safe-change.md` |
-| I6 | `I6-bug-diagnosis.md` |
-| A5 | `A5-pr-review.md` |
+| Range | Artifacts |
+|-------|-----------|
+| B1–I2 | `evidence/B/B1-repo-inventory.md` … `evidence/I/I2-end-to-end-flow.md` |
+| I3, I6 | `evidence/I/I3-small-safe-change.md`, `evidence/I/I6-bug-diagnosis.md` |
+| A1–A6 | `evidence/A/A1-parallel-plan.md` … `evidence/A/A6-performance.md` |

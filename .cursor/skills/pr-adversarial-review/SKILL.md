@@ -68,4 +68,4 @@ Review a PR **as a skeptical human** — not a cheerleader. Works on any repo/PR
 
 ## Reference
 
-Example: `PM4-6558-assignment/A5-pr-review.md` (PM4-6500 Testcontainers PR).
+Example: `PM4-6558-assignment/evidence/A/A5-pr-review.md` (PM4-6500 Testcontainers PR).

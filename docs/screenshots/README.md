@@ -32,7 +32,7 @@ Referenced from root [`README.md`](../../README.md) § Verification screenshots.
 **Best option (shows breadth):** I4 convert service — **9 tests** including D6 metrics.
 
 ```bash
-cd PM4-6558-assignment/I4-convert-pair/service
+cd PM4-6558-assignment/artifacts/I4-convert-pair/service
 source .venv/bin/activate   # or: .venv/bin/pytest
 pip install -r requirements-dev.txt   # if needed
 pytest -v
@@ -44,9 +44,9 @@ pytest -v
 - A few test names visible, e.g. `test_convert_api.py`, `test_metrics.py`
 
 **Alternative (pick one if you prefer):**
-- A3: `cd A3-fraud-score/service && pytest -v` → 3 passed
-- B4: `cd B4-fastapi && pytest -v` → 4 passed
-- D3: `cd D3-ci && ./scripts/run-ci-local.sh` → ruff + pytest + npm all green
+- A3: `cd artifacts/A3-fraud-score/service && pytest -v` → 3 passed
+- B4: `cd artifacts/B4-fastapi && pytest -v` → 4 passed
+- D3: `cd artifacts/D3-ci && ./scripts/run-ci-local.sh` → ruff + pytest + npm all green
 
 ---
 
@@ -78,7 +78,7 @@ pytest -v
 **Option A — JSON file (easiest, no server running):**
 
 ```bash
-open PM4-6558-assignment/D6-observability/artifacts/panel-data.json
+open PM4-6558-assignment/artifacts/artifacts/D6-observability/artifacts/panel-data.json
 ```
 
 **Frame the editor/viewer showing:**
@@ -89,7 +89,7 @@ open PM4-6558-assignment/D6-observability/artifacts/panel-data.json
 **Option B — Live `/metrics` after load (stronger):**
 
 ```bash
-cd PM4-6558-assignment/D6-observability
+cd PM4-6558-assignment/artifacts/D6-observability
 ./scripts/prove-local.sh
 # In another terminal:
 curl -s http://127.0.0.1:8000/metrics | grep convert_requests_total
@@ -110,7 +110,7 @@ convert_requests_total{from_currency="USD",status="success",to_currency="EUR"} 2
 | Filename | What | How |
 |----------|------|-----|
 | `04-github-repo-overview.png` | Repo root on GitHub | After push: README + folder list visible |
-| `04-d3-ci-local-green.png` | CI simulation | `cd D3-ci && ./scripts/run-ci-local.sh` |
+| `04-d3-ci-local-green.png` | CI simulation | `cd artifacts/D3-ci && ./scripts/run-ci-local.sh` |
 | `04-bitbucket-pr14.png` | Real FO work | Bitbucket PR #14 tests green |
 
 ---

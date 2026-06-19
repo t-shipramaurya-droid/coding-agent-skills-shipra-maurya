@@ -74,4 +74,4 @@ entry → … → side effect
 
 ## Reference
 
-Example: `PM4-6558-assignment/I3-small-safe-change.md`.
+Example: `PM4-6558-assignment/evidence/I/I3-small-safe-change.md`.

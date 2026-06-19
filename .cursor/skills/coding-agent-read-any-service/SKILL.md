@@ -30,11 +30,11 @@ Run **read-only analysis** on any repo the user points at. Skills map to [What c
 
 | Skill | Exercise | Time target | Output file |
 |-------|----------|-------------|-------------|
-| `repo-inventory` | B1 | 30 min | `B1-repo-inventory.md` |
-| `api-endpoint-map` | B2 | 30 min | `B2-api-endpoint-map.md` |
-| `test-discovery` | B3 | 15 min | `B3-test-discovery.md` |
-| `er-diagram-from-repo` | I1 | 45 min | `I1-er-diagram.md` |
-| `flow-trace` | I2 | 45 min | `I2-end-to-end-flow.md` |
+| `repo-inventory` | B1 | 30 min | `evidence/B/B1-repo-inventory.md` |
+| `api-endpoint-map` | B2 | 30 min | `evidence/B/B2-api-endpoint-map.md` |
+| `test-discovery` | B3 | 15 min | `evidence/B/B3-test-discovery.md` |
+| `er-diagram-from-repo` | I1 | 45 min | `evidence/I/I1-er-diagram.md` |
+| `flow-trace` | I2 | 45 min | `evidence/I/I2-end-to-end-flow.md` |
 
 **Full pack + index:** use `coding-agent-full-onboard` (runs all five + `README.md`).
 
@@ -72,4 +72,4 @@ Also run I2 on: GET /api/v1/example
 | A1–A2 parallel worktrees | Git workflow |
 | D1–D6 infra | Platform artifacts |
 
-Reference implementations: `PM4-6558-assignment/B1-repo-inventory.md` through `I2-end-to-end-flow.md`.
+Reference implementations: `PM4-6558-assignment/evidence/B/B1-repo-inventory.md` through `evidence/I/I2-end-to-end-flow.md`.

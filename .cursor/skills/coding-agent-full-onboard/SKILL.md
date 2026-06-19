@@ -27,11 +27,11 @@ Run the **complete read pack** on any imported service and produce a linked arti
 
 ## Execution order (do not skip verification)
 
-1. **repo-inventory** → `B1-repo-inventory.md`
-2. **api-endpoint-map** → `B2-api-endpoint-map.md`
-3. **test-discovery** → `B3-test-discovery.md` (**must run tests**)
-4. **er-diagram-from-repo** → `I1-er-diagram.md`
-5. **flow-trace** → `I2-end-to-end-flow.md` (one entry from B2 or user)
+1. **repo-inventory** → `evidence/B/B1-repo-inventory.md`
+2. **api-endpoint-map** → `evidence/B/B2-api-endpoint-map.md`
+3. **test-discovery** → `evidence/B/B3-test-discovery.md` (**must run tests**)
+4. **er-diagram-from-repo** → `evidence/I/I1-er-diagram.md`
+5. **flow-trace** → `evidence/I/I2-end-to-end-flow.md` (one entry from B2 or user)
 6. **Write index** → `README.md` (template below)
 7. **Summary footer** — aggregate agent vs manual from B3 at minimum
 

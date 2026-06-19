@@ -63,4 +63,4 @@ Spot-check 3–5 random paths from the inventory exist on disk. Record in the fo
 
 ## Reference
 
-Example: `PM4-6558-assignment/B1-repo-inventory.md` (eq-nudge-info-service).
+Example: `PM4-6558-assignment/evidence/B/B1-repo-inventory.md` (eq-nudge-info-service).

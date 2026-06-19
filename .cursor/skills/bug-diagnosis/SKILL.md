@@ -73,4 +73,4 @@ description: >-
 
 ## Reference
 
-Example: `PM4-6558-assignment/I6-bug-diagnosis.md`.
+Example: `PM4-6558-assignment/evidence/I/I6-bug-diagnosis.md`.
