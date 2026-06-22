@@ -16,15 +16,10 @@ if [ -d .venv ]; then
   source .venv/bin/activate
 fi
 
-pip install -q -r requirements-dev.txt
-
-UVICORN=".venv/bin/uvicorn"
-if [ ! -x "${UVICORN}" ]; then
-  UVICORN="uvicorn"
-fi
+python3 -m pip install -q -r requirements-dev.txt
 
 echo "==> Starting uvicorn"
-"${UVICORN}" app.main:app --host 127.0.0.1 --port 8000 >/tmp/d6-uvicorn.log 2>&1 &
+python3 -m uvicorn app.main:app --host 127.0.0.1 --port 8000 >/tmp/d6-uvicorn.log 2>&1 &
 UV_PID=$!
 
 cleanup() {
@@ -83,5 +78,5 @@ json.dump(payload, open(out_path, "w"), indent=2)
 print(json.dumps(payload, indent=2))
 PY
 
-pytest -q tests/test_metrics.py
+python3 -m pytest -q tests/test_metrics.py
 echo "OK — D6 local observability proof complete"

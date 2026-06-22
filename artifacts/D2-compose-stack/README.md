@@ -14,11 +14,21 @@ Node worker → Rust fraud-score CLI
 
 ## One-command E2E (assignment proof)
 
-Requires **Docker Desktop** running.
+### Without Docker (local processes)
 
 ```bash
 cd PM4-6558-assignment/artifacts/D2-compose-stack
 chmod +x scripts/*.sh
+./scripts/test-stack-local.sh
+```
+
+Uses `FRAUD_STORE=memory` — same API, worker, and Rust engine; no Postgres or Docker required.
+
+### With Docker Desktop
+
+Requires **Docker Desktop** running.
+
+```bash
 ./scripts/test-stack.sh
 ```
 

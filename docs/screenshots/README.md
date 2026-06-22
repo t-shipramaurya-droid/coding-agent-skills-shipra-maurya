@@ -8,6 +8,7 @@
 | [`02-d6-panel-data-json.png`](02-d6-panel-data-json.png) | D6 `panel-data.json` in editor |
 | [`03-d6-prove-local-terminal.png`](03-d6-prove-local-terminal.png) | D6 `prove-local.sh` full output |
 | [`04-d6-metrics-grep.png`](04-d6-metrics-grep.png) | D6 Prometheus `convert_requests_total` grep |
+| [`05-d2-local-e2e-green.png`](05-d2-local-e2e-green.png) | D2 `test-stack-local.sh` — E2E green without Docker |
 
 Referenced from root [`README.md`](../../README.md) § Verification screenshots.
 

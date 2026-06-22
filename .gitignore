@@ -23,6 +23,7 @@
 
 # Logs / temp
 **/artifacts/*.log
+**/.local-run/
 /tmp/
 
 # Lock files optional — keep package-lock if you add it later

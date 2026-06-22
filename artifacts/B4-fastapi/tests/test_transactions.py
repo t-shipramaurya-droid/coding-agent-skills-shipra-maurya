@@ -13,6 +13,12 @@ def reset():
     client.post("/_reset")
 
 
+def test_health():
+    response = client.get("/health")
+    assert response.status_code == 200
+    assert response.json() == {"status": "ok"}
+
+
 def test_create_credit_and_get_balance():
     response = client.post("/transactions", json={"amount": 100.0, "type": "credit"})
     assert response.status_code == 201

@@ -228,7 +228,8 @@ These images are committed to the repo so HR/evaluators can see **manual verific
 | [`01-pytest-all-green.png`](docs/screenshots/01-pytest-all-green.png) | **I4 + D6 tests pass** — 9/9 pytest (API, converter, metrics) | `cd artifacts/I4-convert-pair/service && pytest -v` |
 | [`02-d6-panel-data-json.png`](docs/screenshots/02-d6-panel-data-json.png) | **D6 panel data** — JSON with USD→EUR (21), USD→INR (11), EUR→USD (8) | `artifacts/D6-observability/artifacts/panel-data.json` |
 | [`03-d6-prove-local-terminal.png`](docs/screenshots/03-d6-prove-local-terminal.png) | **D6 full pipeline** — load 40 requests, metrics snapshot, 2 pytest passed | `cd artifacts/D6-observability && ./scripts/prove-local.sh` |
-| [`04-d6-metrics-grep.png`](docs/screenshots/04-d6-metrics-grep.png) | **Prometheus counters** — raw `convert_requests_total` lines (21+11+8=40) | `grep convert_requests_total artifacts/artifacts/D6-observability/artifacts/metrics-snapshot.txt` |
+| [`04-d6-metrics-grep.png`](docs/screenshots/04-d6-metrics-grep.png) | **Prometheus counters** — raw `convert_requests_total` lines (21+11+8=40) | `grep convert_requests_total artifacts/D6-observability/artifacts/metrics-snapshot.txt` |
+| [`05-d2-local-e2e-green.png`](docs/screenshots/05-d2-local-e2e-green.png) | **D2 local E2E** — API + worker + Rust engine, no Docker | `cd artifacts/D2-compose-stack && ./scripts/test-stack-local.sh` |
 
 ### 1 — All tests green (I4 convert + D6 metrics)
 
@@ -254,7 +255,13 @@ These images are committed to the repo so HR/evaluators can see **manual verific
 
 *Direct exposition from `/metrics` — counters match the 40-request load script.*
 
-> **Tip for evaluators:** Start with screenshots 1 and 3, then open [`evidence/D/D6-observability.md`](evidence/D/D6-observability.md) for the full write-up.
+### 5 — D2 compose stack (local E2E, no Docker)
+
+![test-stack-local.sh: seeds scored LOW and HIGH, PASS E2E](docs/screenshots/05-d2-local-e2e-green.png)
+
+*Memory-backed API + Node worker + Rust fraud-score — proves D2 flow without Docker Desktop.*
+
+> **Tip for evaluators:** Start with screenshots 1, 3, and 5, then open [`evidence/D/D6-observability.md`](evidence/D/D6-observability.md) and [`evidence/D/D2-compose-stack.md`](evidence/D/D2-compose-stack.md) for full write-ups.
 
 ---
 
@@ -391,7 +398,7 @@ Per-exercise detail: I3, I6, A4, A5 markdown files each include an **agent vs ma
 | Item | Link / location |
 |------|-----------------|
 | be-plan PM4-6500 | [Confluence — Implementation plan](https://paytmmoney.atlassian.net/wiki/spaces/PM/pages/748716084) |
-| Integration tests PR | Bitbucket PR #14 on `eq-order-hold-consumer` → `stage` |
+| Integration tests PR | Bitbucket PR #14 — **merged** to `stage` on `eq-order-hold-consumer` |
 | A5 code review | [`evidence/A/A5-pr-review.md`](evidence/A/A5-pr-review.md) — **Approve** with non-blocking follow-ups |
 
 ---
@@ -408,18 +415,37 @@ Per-exercise detail: I3, I6, A4, A5 markdown files each include an **agent vs ma
 
 ## Quick verification commands (copy-paste)
 
+**One command (all offline-friendly checks):**
+
 ```bash
-# B4 FastAPI
+chmod +x scripts/verify-assignment.sh
+./scripts/verify-assignment.sh
+```
+
+See [`EXECUTION_SUMMARY.md`](EXECUTION_SUMMARY.md) for what runs locally vs CI/cloud proof (Docker gaps documented honestly).
+
+**Individual exercises:**
+
+```bash
+# B4 FastAPI (includes GET /health)
 cd artifacts/B4-fastapi && python3 -m venv .venv && source .venv/bin/activate
-pip install -r requirements.txt && pytest -v
+python3 -m pip install -r requirements.txt && python3 -m pytest -v
+# optional live check: uvicorn app.main:app --port 8000 & curl -s http://127.0.0.1:8000/health
+
+# B5 Node.js (includes GET /health)
+cd artifacts/B5-nodejs && npm test
+# optional live check: node src/server.js & curl -s http://127.0.0.1:3000/health
+
+# D2 compose stack (no Docker)
+cd artifacts/D2-compose-stack && ./scripts/test-stack-local.sh
 
 # I4 convert pair
-cd artifacts/I4-convert-pair/service && pip install -r requirements.txt && pytest -q
+cd artifacts/I4-convert-pair/service && python3 -m pip install -r requirements.txt && python3 -m pytest -q
 cd ../client && npm test
 
 # A3 fraud score
 cd artifacts/A3-fraud-score/engine && cargo test
-cd ../service && pytest -q
+cd ../service && python3 -m pytest -q
 cd ../worker && npm test
 
 # D1 Terraform
@@ -428,7 +454,7 @@ cd artifacts/D1-terraform && ./scripts/tf-verify.sh
 # D3 CI (local simulation)
 cd artifacts/D3-ci && ./scripts/run-ci-local.sh
 
-# D6 Observability (no Docker)
+# D6 Observability (no Docker — python3 -m pip / python3 -m uvicorn)
 cd artifacts/D6-observability && ./scripts/prove-local.sh
 ```
 
@@ -439,8 +465,11 @@ cd artifacts/D6-observability && ./scripts/prove-local.sh
 ```
 PM4-6558-assignment/
 ├── README.md
+├── EXECUTION_SUMMARY.md      ← local vs CI run matrix
 ├── 00-basics-self-eval.md
 ├── learnings.md
+├── scripts/
+│   └── verify-assignment.sh  ← one-command offline verification
 ├── evidence/                 ← proof write-ups (B / I / A / D)
 │   ├── README.md             ← index: exercise → repo → file
 │   ├── B/   B1–B3.md

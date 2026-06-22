@@ -6,6 +6,7 @@ Small greenfield service for the coding agent skills assignment (PM4-6558).
 
 | Method | Path | Description |
 |--------|------|-------------|
+| GET | `/health` | Liveness check (`{"status":"ok"}`) |
 | POST | `/transactions` | Create credit/debit transaction |
 | GET | `/transactions` | List all transactions |
 | GET | `/balance` | Current balance |
@@ -38,6 +39,7 @@ curl -X POST http://localhost:8000/transactions \
   -H 'Content-Type: application/json' \
   -d '{"amount": 100, "type": "credit", "description": "deposit"}'
 
+curl http://localhost:8000/health
 curl http://localhost:8000/balance
 curl http://localhost:8000/transactions
 ```

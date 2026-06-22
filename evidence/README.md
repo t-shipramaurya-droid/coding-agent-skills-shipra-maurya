@@ -44,7 +44,7 @@ Proof write-ups for PM4-6558 — **what was done**, **on which repo**, and **how
 | A2 | [A2-parallel-worktrees.md](A/A2-parallel-worktrees.md) | eq-order-hold-consumer (worktrees) | — |
 | A3 | [A3-fraud-score-system.md](A/A3-fraud-score-system.md) | Polyglot mini-system | [artifacts/A3-fraud-score](../artifacts/A3-fraud-score/) |
 | A4 | [A4-modernization.md](A/A4-modernization.md) | eq-order-hold-consumer (MySQL driver) | Bitbucket branch |
-| A5 | [A5-pr-review.md](A/A5-pr-review.md) | eq-order-hold-consumer PR #14 | — |
+| A5 | [A5-pr-review.md](A/A5-pr-review.md) | eq-order-hold-consumer PR #14 (**merged**) | — |
 | A6 | [A6-performance.md](A/A6-performance.md) | A3 fraud-score worker | [artifacts/A3-fraud-score](../artifacts/A3-fraud-score/) |
 
 ---

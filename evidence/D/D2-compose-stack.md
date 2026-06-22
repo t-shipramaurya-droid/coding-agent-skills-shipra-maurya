@@ -75,9 +75,17 @@ cd PM4-6558-assignment/artifacts/D2-compose-stack
 | Docker installed | ❌ Not available |
 | `docker-compose.yml` YAML parse | ✅ Valid YAML (Python) |
 | All scripts + Dockerfiles present | ✅ |
-| Full `test-stack.sh` | ⏭️ Run when Docker Desktop installed |
+| **Local E2E (no Docker)** | ✅ `./scripts/test-stack-local.sh` — memory store + uvicorn + worker |
+| Full `test-stack.sh` (compose) | ⏭️ Run when Docker Desktop installed |
 
-Same acceptance pattern as **I5**: deliver complete compose stack + scripts; full green run optional locally if no Docker.
+### Local path without Docker or Postgres
+
+```bash
+cd PM4-6558-assignment/artifacts/D2-compose-stack
+./scripts/test-stack-local.sh
+```
+
+Uses `FRAUD_STORE=memory` (seeded `tx-seed-001` / `tx-seed-002`) — same API routes, Rust engine, and Node worker as the compose stack. Postgres path remains the production-like default when `FRAUD_STORE` is unset.
 
 **When Docker is available:**
 
@@ -104,6 +112,6 @@ Re-run `./scripts/test-stack.sh` for clean re-up from zero.
 |------|------|
 | docker-compose + Dockerfiles | ✅ |
 | Seed script | ✅ `db/init/*.sql` |
-| One-command E2E script | ✅ `scripts/test-stack.sh` |
+| One-command E2E script | ✅ `scripts/test-stack.sh` + `scripts/test-stack-local.sh` |
 | Logs proving interaction | ✅ scripted in test-stack |
 | Teardown + re-up | ✅ stack-down + test-stack |

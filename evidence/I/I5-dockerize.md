@@ -68,6 +68,19 @@ cd ../client && node src/cli.js 100 USD INR
 
 The assignment asks for a **Dockerfile + proof the service responds**. You already proved the service responds with **uvicorn + curl + Node CLI** (I4). The Dockerfile is the container artifact; full `docker build` is optional local verification when Docker is available.
 
+### CI proof of container build (no local Docker)
+
+The **D3 CI workflow** includes a `docker-build` job that runs on GitHub-hosted runners (Docker pre-installed):
+
+| Step | What it proves |
+|------|----------------|
+| `docker/build-push-action` | Image builds from `service/Dockerfile` |
+| Tags `i4-convert-service:latest` and `:${{ github.sha }}` | Reproducible image tagging |
+| `docker run` + `curl /health` | Container serves the same API as uvicorn |
+
+Workflow: `artifacts/D3-ci/.github/workflows/convert-service-ci.yml`  
+Local equivalent (lint/test only): `artifacts/D3-ci/scripts/run-ci-local.sh`
+
 **If you install Docker later** (optional):
 
 ```bash

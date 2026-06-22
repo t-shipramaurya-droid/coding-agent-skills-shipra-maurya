@@ -102,4 +102,25 @@ git push
 | Passing run | ✅ local simulation |
 | Failure demo | ✅ scripted + log |
 
-**Note:** Full docker-build job runs on GitHub-hosted runners (Docker available). Local machine skips docker step (I5/D2 pattern).
+**Note:** Full docker-build job runs on GitHub-hosted runners (Docker available). Local machine skips docker step; use `docker-build` job in workflow as cloud proof (see §5).
+
+---
+
+## 5. Cloud docker-build proof (I5 without local Docker)
+
+When the workflow is installed in a GitHub repo and pushed, job **`docker-build`** on `ubuntu-latest`:
+
+1. Builds from `artifacts/I4-convert-pair/service/Dockerfile`
+2. Loads image `i4-convert-service:latest`
+3. Runs container on port 8000
+4. Curls `GET /health` until OK
+
+This satisfies I5 container verification when Docker Desktop is not on the developer laptop.
+
+Local substitute for lint/test only:
+
+```bash
+./scripts/run-ci-local.sh
+```
+
+---

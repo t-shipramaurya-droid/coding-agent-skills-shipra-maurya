@@ -39,6 +39,12 @@ describe('transaction service', () => {
     resetState();
   });
 
+  it('returns health status', async () => {
+    const response = await request('GET', '/health');
+    assert.equal(response.status, 200);
+    assert.deepEqual(response.body, { status: 'ok' });
+  });
+
   it('creates credit and updates balance', async () => {
     const created = await request('POST', '/transactions', { amount: 100, type: 'credit' });
     assert.equal(created.status, 201);

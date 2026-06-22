@@ -1,24 +1,39 @@
 from __future__ import annotations
 
+import os
+
 from fastapi import FastAPI, HTTPException
 
 from app.db import wait_for_db
-from app.store import (
-    ScoreResult,
-    Transaction,
-    TransactionCreate,
-    apply_score,
-    create_transaction,
-    get_transaction,
-    list_pending,
-)
+
+if os.environ.get("FRAUD_STORE") == "memory":
+    from app.store_memory import (
+        ScoreResult,
+        Transaction,
+        TransactionCreate,
+        apply_score,
+        create_transaction,
+        get_transaction,
+        list_pending,
+    )
+else:
+    from app.store import (
+        ScoreResult,
+        Transaction,
+        TransactionCreate,
+        apply_score,
+        create_transaction,
+        get_transaction,
+        list_pending,
+    )
 
 app = FastAPI(title="D2 Fraud Stack API", version="1.0.0")
 
 
 @app.on_event("startup")
 def on_startup() -> None:
-    wait_for_db()
+    if os.environ.get("FRAUD_STORE") != "memory":
+        wait_for_db()
 
 
 @app.get("/health")

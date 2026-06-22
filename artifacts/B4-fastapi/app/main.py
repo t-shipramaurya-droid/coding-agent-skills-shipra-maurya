@@ -8,6 +8,11 @@ _transactions: list[dict] = []
 _balance: float = 0.0
 
 
+@app.get("/health")
+def health() -> dict[str, str]:
+    return {"status": "ok"}
+
+
 class TransactionCreate(BaseModel):
     amount: float = Field(..., gt=0, description="Positive transaction amount")
     type: Literal["credit", "debit"]

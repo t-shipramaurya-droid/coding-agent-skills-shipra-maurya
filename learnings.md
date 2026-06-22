@@ -27,7 +27,7 @@
 | Gradle wrapper SSL locally | Medium | `./gradlew` failed on corporate SSL; mitigated via sdkman `gradle` + D5 bootstrap |
 | No Docker on dev machine | Medium | I5/D2/D4/D6 full stack runs deferred; artifacts + offline validation used instead |
 | codegraph MCP unavailable | Low | Fell back to grep/file reads for repo context (worked fine for this repo size) |
-| PM4-6500 PR merge | Low | PR #14 pending green pipeline / merge to `stage` |
+| PM4-6500 PR merge | — | PR #14 **merged** to `stage` (Testcontainers ITs) |
 
 ---
 
@@ -51,8 +51,8 @@
 ## Recommendations (post-assignment)
 
 1. Install Docker Desktop locally to run D2/D4/D6 full stack and I5 container proof end-to-end.
-2. Merge PM4-6500 PR #14 when Bitbucket pipeline is green.
-3. Push optional branches (`assignment/PM4-6558-A4`, assignment folder) if team wants remote review.
+2. ~~Merge PM4-6500 PR #14~~ — **done** (merged to `stage`).
+3. Push optional assignment branches to Bitbucket if team wants remote review of I3/A4 artifacts.
 4. Run `/be-execute PM4-6500` verification gates if FO delivery pipeline requires archival.
 
 ---
@@ -86,7 +86,7 @@
 | D5 Bootstrap | ✅ | `evidence/D/D5-reproducible-env.md` + `eq-order-hold-consumer/Makefile` |
 | D6 Observability | ✅ | `artifacts/D6-observability/` — metrics + panel-data.json |
 | /be-plan PM4-6500 | ✅ | [Confluence plan](https://paytmmoney.atlassian.net/wiki/spaces/PM/pages/748716084) |
-| PM4-6500 implementation | ✅ | PR #14 — Testcontainers ITs + JaCoCo |
+| PM4-6500 implementation | ✅ | PR #14 — **merged** to `stage` (Testcontainers ITs + JaCoCo) |
 
 ---
 

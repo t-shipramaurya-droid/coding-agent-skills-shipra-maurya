@@ -1,7 +1,7 @@
 # HELP python_gc_objects_collected_total Objects collected during gc
 # TYPE python_gc_objects_collected_total counter
-python_gc_objects_collected_total{generation="0"} 1380.0
-python_gc_objects_collected_total{generation="1"} 28.0
+python_gc_objects_collected_total{generation="0"} 1425.0
+python_gc_objects_collected_total{generation="1"} 206.0
 python_gc_objects_collected_total{generation="2"} 0.0
 # HELP python_gc_objects_uncollectable_total Uncollectable objects found during GC
 # TYPE python_gc_objects_uncollectable_total counter
@@ -11,7 +11,7 @@ python_gc_objects_uncollectable_total{generation="2"} 0.0
 # HELP python_gc_collections_total Number of times this generation was collected
 # TYPE python_gc_collections_total counter
 python_gc_collections_total{generation="0"} 121.0
-python_gc_collections_total{generation="1"} 10.0
+python_gc_collections_total{generation="1"} 11.0
 python_gc_collections_total{generation="2"} 0.0
 # HELP python_info Python platform information
 # TYPE python_info gauge
@@ -22,8 +22,8 @@ http_requests_total{method="GET",path="/health",status="200"} 3.0
 http_requests_total{method="POST",path="/convert",status="200"} 40.0
 # HELP http_requests_created Total HTTP requests
 # TYPE http_requests_created gauge
-http_requests_created{method="GET",path="/health",status="200"} 1.781693847693888e+09
-http_requests_created{method="POST",path="/convert",status="200"} 1.78169384773632e+09
+http_requests_created{method="GET",path="/health",status="200"} 1.782114367759277e+09
+http_requests_created{method="POST",path="/convert",status="200"} 1.782114367835051e+09
 # HELP http_request_duration_seconds HTTP request latency in seconds
 # TYPE http_request_duration_seconds histogram
 http_request_duration_seconds_bucket{le="0.005",method="GET",path="/health"} 3.0
@@ -37,7 +37,7 @@ http_request_duration_seconds_bucket{le="1.0",method="GET",path="/health"} 3.0
 http_request_duration_seconds_bucket{le="2.5",method="GET",path="/health"} 3.0
 http_request_duration_seconds_bucket{le="+Inf",method="GET",path="/health"} 3.0
 http_request_duration_seconds_count{method="GET",path="/health"} 3.0
-http_request_duration_seconds_sum{method="GET",path="/health"} 0.0023202499999999127
+http_request_duration_seconds_sum{method="GET",path="/health"} 0.002975626000000009
 http_request_duration_seconds_bucket{le="0.005",method="POST",path="/convert"} 40.0
 http_request_duration_seconds_bucket{le="0.01",method="POST",path="/convert"} 40.0
 http_request_duration_seconds_bucket{le="0.025",method="POST",path="/convert"} 40.0
@@ -49,11 +49,11 @@ http_request_duration_seconds_bucket{le="1.0",method="POST",path="/convert"} 40.
 http_request_duration_seconds_bucket{le="2.5",method="POST",path="/convert"} 40.0
 http_request_duration_seconds_bucket{le="+Inf",method="POST",path="/convert"} 40.0
 http_request_duration_seconds_count{method="POST",path="/convert"} 40.0
-http_request_duration_seconds_sum{method="POST",path="/convert"} 0.036108415000000615
+http_request_duration_seconds_sum{method="POST",path="/convert"} 0.036636161000000556
 # HELP http_request_duration_seconds_created HTTP request latency in seconds
 # TYPE http_request_duration_seconds_created gauge
-http_request_duration_seconds_created{method="GET",path="/health"} 1.781693847693904e+09
-http_request_duration_seconds_created{method="POST",path="/convert"} 1.781693847736332e+09
+http_request_duration_seconds_created{method="GET",path="/health"} 1.782114367759305e+09
+http_request_duration_seconds_created{method="POST",path="/convert"} 1.782114367835072e+09
 # HELP convert_requests_total Currency convert operations
 # TYPE convert_requests_total counter
 convert_requests_total{from_currency="USD",status="success",to_currency="EUR"} 21.0
@@ -61,6 +61,6 @@ convert_requests_total{from_currency="USD",status="success",to_currency="INR"} 1
 convert_requests_total{from_currency="EUR",status="success",to_currency="USD"} 8.0
 # HELP convert_requests_created Currency convert operations
 # TYPE convert_requests_created gauge
-convert_requests_created{from_currency="USD",status="success",to_currency="EUR"} 1.781693847735565e+09
-convert_requests_created{from_currency="USD",status="success",to_currency="INR"} 1.781693847763919e+09
-convert_requests_created{from_currency="EUR",status="success",to_currency="USD"} 1.7816938477929778e+09
+convert_requests_created{from_currency="USD",status="success",to_currency="EUR"} 1.782114367834529e+09
+convert_requests_created{from_currency="USD",status="success",to_currency="INR"} 1.7821143678662112e+09
+convert_requests_created{from_currency="EUR",status="success",to_currency="USD"} 1.782114367895148e+09

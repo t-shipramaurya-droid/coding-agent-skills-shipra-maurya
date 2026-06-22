@@ -28,6 +28,10 @@ const server = http.createServer(async (req, res) => {
   const url = new URL(req.url, `http://${req.headers.host}`);
 
   try {
+    if (req.method === 'GET' && url.pathname === '/health') {
+      return sendJson(res, 200, { status: 'ok' });
+    }
+
     if (req.method === 'POST' && url.pathname === '/transactions') {
       const body = await parseBody(req);
       const tx = createTransaction(body);
