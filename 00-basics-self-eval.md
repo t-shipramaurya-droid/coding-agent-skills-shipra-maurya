@@ -9,8 +9,8 @@ Answer **yes / no / partial** honestly. Evidence from completed learning tasks i
 | API mapping | Can you map all API endpoints to handlers/controllers in 30 minutes? | **yes** | [`evidence/B/B2-api-endpoint-map.md`](evidence/B/B2-api-endpoint-map.md) — controllers → routes |
 | Flow tracing | Can you trace one endpoint/event/cron flow end-to-end across files in 45 minutes? | **yes** | [`evidence/I/I2-end-to-end-flow.md`](evidence/I/I2-end-to-end-flow.md) — sequence diagram + file path |
 | Testing | Can you identify the test framework, relevant test files, and exact test command for a module in 30 minutes? | **yes** | [`evidence/B/B3-test-discovery.md`](evidence/B/B3-test-discovery.md) — JUnit 5, 45 classes, `gradle test` output |
-| Greenfield build | Can you build a small FastAPI service from scratch with tests in 60 minutes? | **yes** | [`artifacts/B4-fastapi/`](artifacts/B4-fastapi/) — 4/4 pytest; POST/GET transactions + balance |
-| Node.js build | Can you build a small Node.js service/CLI with tests in 60 minutes? | **yes** | [`artifacts/B5-nodejs/`](artifacts/B5-nodejs/) — 3/3 npm test; same transaction API as B4 |
+| Greenfield build | Can you build a small FastAPI service from scratch with tests in 60 minutes? | **yes** | [`artifacts/B4-fastapi/`](artifacts/B4-fastapi/) — 5/5 pytest (incl. GET /health); POST/GET transactions + balance |
+| Node.js build | Can you build a small Node.js service/CLI with tests in 60 minutes? | **yes** | [`artifacts/B5-nodejs/`](artifacts/B5-nodejs/) — 4/4 npm test (incl. GET /health); same transaction API as B4 |
 | Rust build | Can you build a small Rust CLI/library with tests in 60 minutes? | **yes** | [`artifacts/B6-rust-logcounter/`](artifacts/B6-rust-logcounter/) — 3/3 cargo test; INFO/WARN/ERROR counts |
 | Parallel work | Can you split a task across multiple worktrees or agent sessions safely? | **yes** | [`evidence/A/A1-parallel-plan.md`](evidence/A/A1-parallel-plan.md), [`evidence/A/A2-parallel-worktrees.md`](evidence/A/A2-parallel-worktrees.md) — 2 lanes merged, zero conflicts |
 | Verification | Can you separate what the agent suggested from what you manually verified? | **yes** | [`learnings.md`](learnings.md) § Agent suggested vs manually verified; per-task docs (I3, I6, A4, A5) |
@@ -26,4 +26,4 @@ Answer **yes / no / partial** honestly. Evidence from completed learning tasks i
 - **Docker/compose/kind** (I5, D2, D4, D6 full stack): artifacts + offline validation; see [`learnings.md`](learnings.md) — no Docker admin on laptop.
 - **Cursor usage:** setup + prompts in README § [How to use this agent](README.md#how-to-use-this-agent); assignment workflow in § [How I used Cursor](README.md#how-i-used-cursor).
 - **Reusable skills:** [`.cursor/skills/`](.cursor/skills/) — 16 skills (read + Advanced A1–A6).
-- **Screenshots:** pytest + D6 metrics in [`docs/screenshots/`](docs/screenshots/).
+- **Screenshots:** 5 PNGs in [`docs/screenshots/`](docs/screenshots/) — pytest, D6 metrics, D2 local E2E (no Docker).

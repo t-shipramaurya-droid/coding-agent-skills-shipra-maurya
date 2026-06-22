@@ -64,8 +64,8 @@
 | B1 Repo inventory | ✅ | `evidence/B/B1-repo-inventory.md` |
 | B2 API map | ✅ | `evidence/B/B2-api-endpoint-map.md` |
 | B3 Test discovery | ✅ | `evidence/B/B3-test-discovery.md` (eq-nudge-info-service) |
-| B4 FastAPI | ✅ | `artifacts/B4-fastapi/` — 4/4 tests |
-| B5 Node.js | ✅ | `artifacts/B5-nodejs/` — 3/3 tests |
+| B4 FastAPI | ✅ | `artifacts/B4-fastapi/` — 5/5 tests (incl. GET /health) |
+| B5 Node.js | ✅ | `artifacts/B5-nodejs/` — 4/4 tests (incl. GET /health) |
 | B6 Rust CLI | ✅ | `artifacts/B6-rust-logcounter/` — 3/3 tests |
 | I1 ER diagram | ✅ | `evidence/I/I1-er-diagram.md` |
 | I2 Flow trace | ✅ | `evidence/I/I2-end-to-end-flow.md` |
@@ -80,7 +80,7 @@
 | A5 PR review | ✅ | `evidence/A/A5-pr-review.md` — PM4-6500 approve |
 | A6 Performance | ✅ | `evidence/A/A6-performance.md` — batch subprocess ~50× faster |
 | D1 Terraform | ✅ | `artifacts/D1-terraform/` — validate + mock plan |
-| D2 docker-compose | ✅ | `artifacts/D2-compose-stack/` — compose + E2E scripts |
+| D2 docker-compose | ✅ | `artifacts/D2-compose-stack/` — compose + E2E scripts + `test-stack-local.sh` (verified) |
 | D3 CI pipeline | ✅ | `artifacts/D3-ci/` — GitHub Actions + local CI sim |
 | D4 Kubernetes | ✅ | `artifacts/D4-kubernetes/` — kubeconform 5/5 |
 | D5 Bootstrap | ✅ | `evidence/D/D5-reproducible-env.md` + `eq-order-hold-consumer/Makefile` |
@@ -101,4 +101,5 @@
 - [x] Jira PM4-6558 → Submit for Review
 - [x] GitHub repo pushed — https://github.com/t-shipramaurya-droid/coding-agent-skills-shipra-maurya
 - [x] Evidence reorganized: `evidence/` (write-ups) + `artifacts/` (runnable code)
-- [x] Verification screenshots in `docs/screenshots/` (4 PNGs, linked from README)
+- [x] Bitbucket branch pushed — `eq-fo-developer-scripts` / `feature/PM4-6558-ai-learning-shipra` (`cd91f60`)
+- [x] Verification screenshots in `docs/screenshots/` (5 PNGs, linked from README)
